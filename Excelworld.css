@@ -3,7 +3,7 @@ h1{
   color: white ;
 }
 
-body{
+body{max-width:680px;
   background-color: black;
   color: white;}
   
