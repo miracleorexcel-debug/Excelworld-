@@ -1,4 +1,7 @@
 
+* {
+  box-sizing: border-box;
+}
 
 h1{font-size:3.5em;
   text-align: center;
@@ -35,6 +38,7 @@ nav{
 flex-wrap: wrap;
 margin: auto;
 gap:20px;
+  padding:0 20px;
 }
 
 img{
@@ -49,11 +53,13 @@ footer{
   border-radius:4px;
   padding:5px;
   margin-bottom:25px;
-  margin-top:10px;}
+  margin-top:10px;
+}
   
   aside{
     background-color:#231D45;
     border-radius: 20px;
     padding:4px 4px;
     text-align: center;
+    font-size:20px;
   }
