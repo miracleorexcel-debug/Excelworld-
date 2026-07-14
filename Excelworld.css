@@ -2,6 +2,13 @@
 * {
   box-sizing: border-box;
 }
+.pg {
+  text-align: center;      /* Centers the text beautifully */
+  padding: 0 20px;         /* Adds 20px of breathing room on the left and right */
+  line-height: 1.4;        /* Slightly increases spacing between lines for readability */
+  margin: 15px auto;       /* Adds space above/below and keeps it centered */
+}
+
 
 h1{font-size:3.5em;
   text-align: center;
