@@ -1,0 +1,100 @@
+
+* {
+  box-sizing: border-box;
+}
+.gp {
+  text-align: center;      /* Centers the text beautifully */
+  padding: 0 20px;         /* Adds 20px of breathing room on the left and right */
+  line-height: 1.4;        /* Slightly increases spacing between lines for readability */
+  margin: 25px auto;       /* Adds space above/below and keeps it centered */
+  margin-top:5px;
+
+}
+
+
+h1{font-size:3.5em;
+  text-align: center;
+  color: white ;
+}
+
+body{max-width:680px;
+  background-color: black;
+  color: white;
+    margin:auto;
+    font-weight:bold;}
+  
+ main{line-height:1.2em;
+  font-size:1.5rem;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0 20px;
+}
+
+.home{
+  background-color:#2B0BB1DE;
+  color: white;
+}
+
+a{
+  text-decoration:none;
+background-color: white;
+color: black;
+padding:13px;
+border-radius:10px;
+}
+
+nav{
+  display:flex;
+flex-wrap: wrap;
+margin: auto;
+gap:20px;
+  padding:0 20px;
+  justify-content: center;
+}
+
+img{
+  height: auto;
+  width:100%;
+  margin-top:10px;}
+
+footer{
+  text-align: center;
+  border:1px solid white ;
+  color: white ;
+  border-radius:4px;
+  padding:5px;
+  margin-bottom:25px;
+  margin-top:10px;
+}
+  
+  aside{
+    background-color:#231D45;
+    border-radius: 20px;
+    padding:4px 4px;
+    text-align: center;
+    font-size:20px;
+  }
+  
+  .pg{
+    text-align: center;
+    line-height:1.3em;
+    margin-bottom:40px;
+    margin-top:-21px;
+    justify-content: center;
+  }
+  
+  
+  video{ 
+width:90%;
+height: auto;
+    border-radius:11px;
+    box-sizing:border-box;
+    margin-left:10px;
+    justify-content: center;
+  }
+   
+  .btn{
+    display:flex;
+    flex-wrap:wrap;
+    border-radius:10px;
+    margin:28px;
+  }
