@@ -17,10 +17,11 @@ h1{font-size:3.5em;
   color: white ;
 }
 
-body{max-width:680px;
+body{max-width:1200px;
   background-color: black;
   color: white;
     margin:auto;
+     width:100%;
     font-weight:bold;}
   
  main{line-height:1.2em;
