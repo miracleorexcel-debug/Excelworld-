@@ -159,7 +159,7 @@ footer {
 
 /* Responsive Desktop Styles */
 @media (min-width: 600px) {
-  body {
+  body { max-width:450px;
     font-size: 18px;
   }
     
