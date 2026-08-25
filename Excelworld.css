@@ -1,204 +1,197 @@
-    /* Universal Box Sizing */
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 800px;
-  background-color: #000000;
-  color: #ffffff;
-  margin: auto;
-  font-weight: bold;
-  min-height: 100vh;
-  width: 100%;
-}
-
-.home {
-  background-color: #2b0bb1;
-  color: #ffffff;
-}
-
-/* Headers & Sticky Nav */
-h1 {
-  font-size: 1.5rem;
+h1{font-size:1rem;
   text-align: center;
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-.excelworld {
+  color: white ;
+  margin-bottom:15px;}
+  
+ .excelworld{
   position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #2b0bb1;
-  padding: 12px;
-  margin: 0;
+  top:0;
+  gap:12px;
+  background:rgba(43, 11, 177,1);
+  padding:12px;
+  margin:0;
 }
 
-header {
+header{
   position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #000000;
-  padding-bottom: 10px;
-  padding-top: 16px;
+  top:0;
+  background: black;
+  margin-top:40px;
+  padding-bottom:10px;
+  padding-top:16px;
 }
 
-/* Media & Video */
-img {
-  height: auto;
-  width: 100%;
-  display: block;
+main{
+  flex:1;
 }
 
-video {
-  width: 100%;
-  height: auto;
-  border-radius: 11px;
-}
-
-.video-link {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  margin: 0 12px;
-  border: none;
-}
-
+video { width:100%;
+height: auto;
+    border-radius:11px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:0;
+  }
+  
 .about-video,
-.about-button {
-  text-align: center;
-  line-height: 1.5rem;
-  margin-top: 0.5em;
-  padding: 0 20px;
-  margin-bottom: 2em;
-  font-size: 0.9em;
+.about-button{ text-align: center;
+    line-height:2.5rem;
+    margin-top:0.5em;
+    justify-content: center;
+    padding:0 20px;
+    margin-bottom:2em;
+    font-size:0.8em;
+    }
+  
+  
+  .video-link {
+    display:flex;
+    flex-wrap:wrap;
+   justify-content: center;
+    align-items: center;
+    border-radius:10px;
+    margin:0 12px;
+   }
+    
+  a{text-decoration:none;
+color: black;
+border:1px solid blue;
+padding:10px;
+border-radius:9px;
 }
 
-/* Links & Buttons */
-a {
-  text-decoration: none;
-  color: #000000;
-  border: 1px solid #0000ff;
-  padding: 10px;
-  border-radius: 9px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.button {
-  display: flex;
+.button{
+  display:flex;
   flex-wrap: wrap;
-  margin: 0 12px 30px 12px;
-  gap: 10px;
+margin: auto 12px;
+margin-bottom:42px;
+gap:10px;
   justify-content: space-around;
-  background: #ffffff;
-  padding: 1em;
-  border-radius: 0.5em;
+background: white;
+padding:1em;
+border-radius:0.5em;
 }
 
-.button a:hover {
-  background: #2b0bb1;
-  color: #ffffff;
+body{font-family: Arial, Helvetica, sans-serif;
+  max-width:1200px;
+  background-color: black;
+  color: white;
+    margin:auto;
+    font-weight:bold;
+  min-height:100vh;
+  width:100%;
+}
+    
+    @media /*for laptop screen*/(min-width:600px){
+    body{
+  font-size:40px;  
+    }
+  h1{font-size:2.8rem;}
+  .aside p{
+    font-style: italic;
+    font-size:30px;
+  }
+  .aside h3{font-size:3.2em;
+} 
+ p{ font-size:3rem;
+        line-height:3.4rem;
+}
+main{
+  margin-bottom:2em;
 }
 
-.button a.active {
-  background: #2b0bb1;
-  color: #ffffff;
-  border-color: #2b0bb1;
+a.selar-link{
+  font-size:40px;
+  padding:20px;
+  color: white;
+}
+ol{
+  font-size:40px;
+}
 }
 
-/* Layout Elements */
-main {
-  flex: 1;
-  line-height: 1.6em;
-  font-size: 1.1rem;
-  padding: 0 20px;
+  
+ main{line-height:1.2em;
+  font-size:1.2rem;
+  font-family:Arial, Helvetica, sans-serif;
+  padding:0 20px;
 }
 
-aside {
-  background-color: #231d45;
-  border-radius: 20px;
-  padding: 15px;
+.home{
+  background-color:#2B0BB1DE;
+  color: white;
+}
+
+
+img{
+  height: auto;
+  width:100%;
+}
+
+footer{
   text-align: center;
-  font-size: 0.95rem;
-  font-style: italic;
-  margin-top: 20px;
-}
+  border:1px solid white ;
+  color: white ;
+  border-radius:4px;
+  padding:5px;
+  margin-bottom:25px;
+  margin-top:10px;
+margin:25px 12px;
 
-.selar-link {
-  color: #ffffff;
-  border: 1px solid #28a745;
-  font-size: 1rem;
-  font-style: italic;
-  padding: 10px 15px;
-  border-radius: 12px;
-  display: flex;
+}
+  
+  aside{
+    background-color:#231D45;
+    border-radius: 20px;
+    padding:4px;
+    text-align: center;
+    font-size:14px;
+    font-style: italic;
+    
+  }
+  
+  
+  .selar-link{
+    color: white;
+    border:1px solid green;
+    font-size:14px;
+    font-style: italic;
+    padding:5px;
+    border-radius:12px;
+    display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
-  max-width: 200px;
+  }
+  
+.button a:hover{
+  background: white;
+  color:rgb(96,96,96);
 }
 
-.selar-link:hover {
-  background-color: #28a745;
-  color: #ffffff;
+.button a:active{
+  text-decoration: underline;
 }
 
-footer {
-  text-align: center;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 25px 12px;
-}
-/* Tablet */
-@media (min-width: 600px) {
-  body { font-size: 18px; }
-  h1 { font-size: 2.2rem; }
-  p, ol { font-size: 1.1rem; line-height: 1.8rem; }
-
-  video {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-
-  .video-link {
-    max-width: 500px;
-    margin: 0 auto 20px auto;
-  }
-
-  .button {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-  }
+a:hover{
+  background: white;
+  color: black ;
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  main {
-    padding: 0 40px;
-  }
 
-  video {
-    max-width: 500px;
-  }
 
-  aside {
-    max-width: 700px;
-    margin: 20px auto;
-  }
 
-  .button {
-    max-width: 700px;
-  }
 
-  footer {
-    max-width: 700px;
-    margin: 25px auto;
-  }
-}
+
+/* CSS */
+.button a.active {
+  background-color: #2B0BB1;
+  color: white;
+  border-color: #2B0BB1;
+      }
+    
