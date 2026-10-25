@@ -1,0 +1,461 @@
+:root {
+    --bg-color: #0d0f12;
+    --card-bg: #14181f;
+    --accent-color: #3b82f6;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: #222b35;
+
+    --header-h: 4rem;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'Montserrat', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--serif);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-h);
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(13, 15, 18, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(1.05rem, 4vw, 1.3rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Layout */
+main {
+    max-width: 42rem;
+    margin: calc(var(--header-h) + 2rem) auto 5rem;
+    padding: 0 1.25rem;
+}
+
+/* Video */
+.video-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 4rem;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Dividers */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 3.5rem 0;
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* Poems */
+.poem-island {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.poem-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+    line-height: 1.25;
+    margin-bottom: 1.75rem;
+    text-wrap: balance;
+}
+
+.poem-stanza {
+    max-width: 34rem;
+    margin: 0 auto 1.5rem;
+    font-size: clamp(1.05rem, 3.6vw, 1.2rem);
+    line-height: 1.95;
+    white-space: normal;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+}
+
+/* Sign-off */
+.interactive-line {
+    margin-top: 2rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+footer strong {
+    font-weight: 400;
+    color: var(--text-main);
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    :root {
+        --header-h: 3.5rem;
+    }
+    .tagline {
+        font-size: 0.85rem;
+    }
+    .section-divider {
+        margin: 2.5rem 0;
+        letter-spacing: 0.25rem;
+    }
+    .poem-island {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Respect users who turn off motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Likes and comments */
+.engage {
+    max-width: 34rem;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    font: 400 1rem var(--sans);
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.like-btn.liked {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.comments {
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+}
+
+.comments summary {
+    padding: 0.8rem 1rem;
+    font: 400 0.95rem var(--sans);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.comment-form {
+    display: grid;
+    gap: 0.6rem;
+    padding: 0 1rem 1rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    font: 1rem var(--serif);
+    color: var(--text-main);
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    resize: vertical;
+}
+
+.comment-form button {
+    justify-self: start;
+    padding: 0.55rem 1.2rem;
+    font: 600 0.9rem var(--sans);
+    color: #fff;
+    background: var(--accent-color);
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.comment-form button:disabled {
+    opacity: 0.6;
+}
+
+.form-note {
+    font: 0.85rem var(--sans);
+    color: var(--text-muted);
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0 1rem;
+}
+
+.comment-list li {
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.comment-list strong {
+    font: 600 0.9rem var(--sans);
+}
+
+.comment-list time {
+    margin-left: 0.6rem;
+    font: 300 0.8rem var(--sans);
+    color: var(--text-muted);
+}
+
+.comment-list p {
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Social links */
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.social a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+/* Vertical video (reels) */
+.video-wrapper.vertical {
+    aspect-ratio: 9 / 16;
+    max-width: 19rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Opening poem */
+.intro {
+    max-width: 34rem;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.intro-lead {
+    margin-bottom: 1.25rem;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.2;
+}
+
+.intro-text {
+    font-size: clamp(1.05rem, 3.6vw, 1.2rem);
+    line-height: 1.95;
+    text-wrap: pretty;
+}
+
+/* Facebook reel link */
+.watch {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.watch-link {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    font: 600 0.95rem var(--sans);
+    letter-spacing: 0.5px;
+    color: var(--accent-color);
+    text-decoration: none;
+    border: 1px solid var(--accent-color);
+    border-radius: 999px;
+}
+
+.watch-link:hover {
+    color: #fff;
+    background: var(--accent-color);
+}
+
+.watch-text {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* More poems toggle and sign-off */
+.more-poems summary {
+    display: block;
+    width: max-content;
+    margin: 0 auto 1rem;
+    padding: 0.8rem 1.6rem;
+    font: 600 0.95rem var(--sans);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 999px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.more-poems summary::-webkit-details-marker {
+    display: none;
+}
+
+.signoff {
+    text-align: center;
+}
+
+/* Page sign-off */
+.signoff {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+/* Logo as a link back to the home page */
+a.logo {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+/* Page navigation buttons */
+.page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0 0 2.5rem;
+}
+
+.page-nav + .intro,
+.page-nav + .section-divider {
+    margin-top: 0;
+}
+
+.page-nav a {
+    padding: 0.6rem 1.4rem;
+    font: 600 0.9rem var(--sans);
+    letter-spacing: 0.5px;
+    color: var(--text-main);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+}
+
+.page-nav a:hover,
+.page-nav a:focus-visible {
+    color: #fff;
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}

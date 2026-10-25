@@ -1,0 +1,182 @@
+    /* Universal Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1200px;
+  background-color: #000000;
+  color: #ffffff;
+  margin: auto;
+  font-weight: bold;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home {
+  background-color: #2b0bb1;
+  color: #ffffff;
+}
+
+/* Headers & Sticky Nav */
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.excelworld {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #2b0bb1;
+  padding: 12px;
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #000000;
+  padding-bottom: 10px;
+  padding-top: 16px;
+}
+
+/* Media & Video */
+img {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 11px;
+}
+
+.video-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0 12px;
+  border: none;
+}
+
+.about-video,
+.about-button {
+  text-align: center;
+  line-height: 1.5rem;
+  margin-top: 0.5em;
+  padding: 0 20px;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+}
+
+/* Links & Buttons */
+a {
+  text-decoration: none;
+  color: #000000;
+  border: 1px solid #0000ff;
+  padding: 10px;
+  border-radius: 9px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.button {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 12px 30px 12px;
+  gap: 10px;
+  justify-content: space-around;
+  background: #ffffff;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.button a:hover {
+  background: #2b0bb1;
+  color: #ffffff;
+}
+
+.button a.active {
+  background: #2b0bb1;
+  color: #ffffff;
+  border-color: #2b0bb1;
+}
+
+/* Layout Elements */
+main {
+  flex: 1;
+  line-height: 1.6em;
+  font-size: 1.1rem;
+  padding: 0 20px;
+}
+
+aside {
+  background-color: #231d45;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.selar-link {
+  color: #ffffff;
+  border: 1px solid #28a745;
+  font-size: 1rem;
+  font-style: italic;
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 200px;
+}
+
+.selar-link:hover {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+footer {
+  text-align: center;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 25px 12px;
+}
+
+/* Responsive Desktop Styles */
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p, ol {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
+
+  .aside h3 {
+    font-size: 1.4rem;
+  }
+
+  .aside p {
+    font-size: 1rem;
+  }
+}
