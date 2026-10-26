@@ -329,6 +329,22 @@
             <p class="poem-stanza">My mind will sometimes go blank,<br>and my body sometimes gets tired.<br>My knees sometimes weaken, and my hands sometimes grow weak.<br>My soul is sometimes trembling,<br> and my heart is sometimes beating.
 Just as you can't escape the blank night,<br>                                            
 So also, you can't escape them.
-        </body>
-            <script type="module" src="comments.js"></script>
-        </html>
+    </main>
+<footer>
+        <p><strong>ExcelWorld</strong> &copy; 2026</p>
+        <p class="social">
+            <a href="https://www.tiktok.com/@miracleorexcel" target="_blank" rel="noopener">TikTok @miracleorexcel</a>
+            <a href="https://www.facebook.com/miracleorexcel" target="_blank" rel="noopener">Facebook @miracleorexcel</a>
+        </p>
+    </footer>
+
+    <script>
+        import("./comments.js").catch(function (e) {
+            var d = document.createElement("div");
+            d.style.cssText = "position:fixed;left:0;right:0;bottom:0;padding:12px;background:#b00020;color:#fff;font:14px sans-serif;z-index:2000";
+            d.textContent = "Comments failed to load: " + (e && e.message ? e.message : e);
+            document.body.appendChild(d);
+        });
+    </script>
+</body>
+</html>
