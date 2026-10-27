@@ -1,27 +1,23 @@
 # ExcelWorld
 
-A personal poetry website — built page by page, straight from HTML and CSS.
+A personal poetry website.
 
 ## About
 
-ExcelWorld is where I put my poems online. Each page carries its own mood and theme — love, betrayal, regret, heartbreak — styled to match what the words are saying.
+ExcelWorld is where I put my poems online.
 
 ## Pages
+**best** and **more**
+ — poems on love and longing
+  — poems on being let down
+  — poems on looking back
+  — poems on heartbreak and healing
 
-- **Love** — poems on love and longing
-- **Betrayal** — poems on being let down
-- **Regret** — poems on looking back
-- **Broken** — poems on heartbreak and healing
-
-## Built With
-
-- HTML5
-- CSS3
 
 ## Live Site
 
-[View ExcelWorld](https://miracleorexcel-debug.github.io/Excelworld-/)
+[View ExcelWorld](https://miraclerexcel-debug.github.io/Excelworld-/)
 
 ## Author
 
-Built by Excel — self-taught, one page at a time, on a phone.
+by Excel.
