@@ -143,7 +143,18 @@ function setup(article, db) {
 /* Start everything (kept at the bottom so all helpers exist first) */
 if (!firebaseConfig.apiKey.startsWith("PASTE")) {
     const db = getFirestore(initializeApp(firebaseConfig));
-    document.querySelectorAll(".poem-island").forEach(article => setup(article, db));
+    const articles = document.querySelectorAll(".poem-island");
+    if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { obs.unobserve(e.target); setup(e.target, db); }
+            });
+        }, { rootMargin: "600px 0px" });
+        articles.forEach(a => io.observe(a));
+    } else {
+        articles.forEach(a => setup(a, db));
+    }
 } else {
     console.warn("comments.js: add your Firebase config to turn on likes and comments.");
 }
+    
