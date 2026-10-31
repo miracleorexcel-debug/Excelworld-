@@ -458,4 +458,125 @@ a.logo {
     color: #fff;
     background: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+/* =========================================================
+   ADVANCED STYLE (CSS only, no HTML changes needed)
+   ========================================================= */
+
+/* 1. Accent colour that drifts slowly from blue to violet.
+      Only the accent moves. Text colours stay fixed so reading is never hurt.
+      steps() keeps it light on cheap phones. */
+@property --hue {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 215;
+}
+
+@keyframes hue-drift {
+    0%, 100% { --hue: 215; }
+    50%      { --hue: 275; }
+}
+
+:root {
+    --accent-color: hsl(var(--hue) 91% 60%);
+    --accent-2: hsl(calc(var(--hue) + 55) 90% 66%);
+    animation: hue-drift 40s steps(80) infinite;
+}
+
+/* 2. Soft glow at the top of the page */
+body {
+    background-image: radial-gradient(60rem 28rem at 50% -8%, hsl(var(--hue) 70% 32% / 0.22), transparent 70%);
+    background-repeat: no-repeat;
+}
+
+/* 3. Logo with a colour gradient */
+.logo span {
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 4. Each poem sits on its own soft card */
+.poem-island {
+    margin-bottom: 1.5rem;
+    padding: 2.25rem 1.25rem 1.75rem;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0));
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+.poem-island + .section-divider {
+    display: none;
+}
+
+.poem-title::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    margin: 1rem auto 0;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-2));
+    border-radius: 2px;
+}
+
+@media (hover: hover) {
+    .poem-island:hover {
+        border-color: hsl(var(--hue) 55% 42% / 0.7);
     }
+}
+
+/* 5. Heart pops when liked */
+@keyframes heart-pop {
+    50% { transform: scale(1.45); }
+}
+
+.like-btn.liked .heart {
+    display: inline-block;
+    animation: heart-pop 0.35s ease;
+}
+
+/* 6. Reading progress bar and fade-in on scroll (Chrome and other modern browsers) */
+@supports (animation-timeline: view()) {
+    @keyframes reveal {
+        from { opacity: 0; transform: translateY(26px); }
+        to   { opacity: 1; transform: none; }
+    }
+
+    .poem-island {
+        animation: reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 22%;
+    }
+
+    @keyframes progress {
+        to { transform: scaleX(1); }
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent-color), var(--accent-2));
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        z-index: 999;
+        animation: progress linear both;
+        animation-timeline: scroll(root);
+    }
+}
+
+/* 7. Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+    :root,
+    .poem-island,
+    .like-btn.liked .heart,
+    body::after {
+        animation: none;
+    }
+    }
+    
